@@ -1,0 +1,3 @@
+# Project exclude paths
+/rest_chat_models/target/
+/target/

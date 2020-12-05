@@ -1,0 +1,19 @@
+package org.rest_chat.rest_chat_client;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
+
+@SpringBootApplication
+public class RestChatClientApplication {
+
+    @Bean
+    public RestTemplate getTemplate() {
+        return new RestTemplate();
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(RestChatClientApplication.class, args);
+    }
+}
