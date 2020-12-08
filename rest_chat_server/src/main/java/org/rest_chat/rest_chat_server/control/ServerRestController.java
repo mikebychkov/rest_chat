@@ -28,20 +28,21 @@ public class ServerRestController {
 
     @PostMapping("/message")
     public Message postMessage(@RequestBody Message message) {
+        Room room = message.getRoom();
+        initRoom(room);
+        RegisterPersonToRoom(message.getPerson(), room);
+        notifyRoom(message);
+        return message;
+    }
 
-        // INIT ROOM
-        Room room = message.getRoom(); 
+    private void initRoom(Room room) {
         if(!rooms.keySet().contains(room)) {
             rooms.put(room, new HashSet<>());
         }
+    }
 
-        // REGISTER PERSON TO THE ROOM
-        rooms.get(room).add(message.getPerson());
-        
-        // NOTIFY OTHERS IN THE ROOM 
-        notifyRoom(message);
-        
-        return message;
+    private void RegisterPersonToRoom(Person person, Room room) {
+        rooms.get(room).add(person);
     }
 
     private void notifyRoom(Message message) {

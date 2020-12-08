@@ -16,5 +16,4 @@ public class RestChatServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(RestChatServerApplication.class, args);
     }
-
 }
