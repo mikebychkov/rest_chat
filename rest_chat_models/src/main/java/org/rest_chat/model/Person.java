@@ -4,25 +4,35 @@ import java.util.Objects;
 
 public class Person {
 
-    private String name;
+    private String username;
+    private String password;
     private String url;
 
     public Person() {
     }
 
-    public static Person of(String name, String port) {
+    public static Person of(String name, String password, String port) {
         Person p = new Person();
-        p.name = name;
+        p.username = name;
+        p.password = password;
         p.url = "http://localhost:" + port + "/client/message";
         return p;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getUrl() {
@@ -38,19 +48,20 @@ public class Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return Objects.equals(name, person.name) &&
+        return Objects.equals(username, person.username) &&
                 Objects.equals(url, person.url);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, url);
+        return Objects.hash(username, url);
     }
 
     @Override
     public String toString() {
         return "Person{" +
-                "name='" + name + '\'' +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
                 ", url='" + url + '\'' +
                 '}';
     }

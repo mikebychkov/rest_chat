@@ -23,7 +23,7 @@ public class ClientRestController {
     @PostMapping("/message")
     public HttpStatus getMessage(@RequestBody Message message) {
         System.out.println("\n\n");
-        System.out.format("#### %s <%s> : %s", message.getRoom().getName(), message.getPerson().getName(), message.getText());
+        System.out.format("#### %s <%s> : %s", message.getRoom().getName(), message.getPerson().getUsername(), message.getText());
         System.out.println("\n\n");
         return HttpStatus.OK;
     }

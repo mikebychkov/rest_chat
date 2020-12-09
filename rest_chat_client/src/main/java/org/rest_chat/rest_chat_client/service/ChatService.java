@@ -40,7 +40,9 @@ public class ChatService implements Runnable {
     private void initDialog() {
         System.out.println("\n\n#### Enter your chat name:\n");
         String name = sc.nextLine();
-        person = Person.of(name, port);
+        System.out.println("\n\n#### Enter your chat password:\n");
+        String password = sc.nextLine();
+        person = Person.of(name, password, port);
         while(!exit) {
             if(resentRoom == null) {
                 resentRoom = pickRoom();
