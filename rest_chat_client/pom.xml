@@ -49,11 +49,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <systemPropertiesVariables>
-                        <server.port/>
-                    </systemPropertiesVariables>
-                </configuration>
                 <executions>
                     <execution>
                         <goals>
