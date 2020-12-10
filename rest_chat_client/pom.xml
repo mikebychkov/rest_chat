@@ -10,7 +10,7 @@
     </parent>
     <groupId>org.rest_chat</groupId>
     <artifactId>rest_chat_client</artifactId>
-    <version>0.1</version>
+    <version>1</version>
     <name>rest_chat_client</name>
     <description>Demo project for Spring Boot</description>
 
@@ -40,8 +40,7 @@
             <groupId>org.rest_chat</groupId>
             <artifactId>rest_chat_models</artifactId>
             <version>1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/rest_chat_models-1.jar</systemPath>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -55,6 +54,13 @@
                         <server.port/>
                     </systemPropertiesVariables>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

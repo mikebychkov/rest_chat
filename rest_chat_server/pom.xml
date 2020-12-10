@@ -10,7 +10,7 @@
     </parent>
     <groupId>org.rest_chat</groupId>
     <artifactId>rest_chat_server</artifactId>
-    <version>0.1</version>
+    <version>1</version>
     <name>rest_chat_server</name>
     <description>Demo project for Spring Boot</description>
 
@@ -59,8 +59,7 @@
             <groupId>org.rest_chat</groupId>
             <artifactId>rest_chat_models</artifactId>
             <version>1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/rest_chat_models-1.jar</systemPath>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>
@@ -70,6 +69,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

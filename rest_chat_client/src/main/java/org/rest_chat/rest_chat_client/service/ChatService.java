@@ -122,7 +122,7 @@ public class ChatService implements Runnable {
     }
 
     private Set<Room> getRooms() {
-        HttpEntity<Message> request = new HttpEntity<>(null, getHeaders());
+        HttpEntity<Void> request = new HttpEntity<>(null, getHeaders());
         Set<Room> rooms = rest.exchange(srvURL_rooms,
                 HttpMethod.GET,
                 request,
