@@ -14,8 +14,8 @@ public class RoomStore {
     private ConcurrentHashMap<Room, Set<Person>> rooms = new ConcurrentHashMap<>();
 
     public Room getRoomByName(String name) {
-        for(Room room : rooms.keySet()) {
-            if(name.equals(room.getName())) {
+        for (Room room : rooms.keySet()) {
+            if (name.equals(room.getName())) {
                 return room;
             }
         }
@@ -23,7 +23,7 @@ public class RoomStore {
     }
 
     public void initRoom(Room room) {
-        if(!rooms.keySet().contains(room)) {
+        if (!rooms.keySet().contains(room)) {
             rooms.put(room, new HashSet<>());
         }
     }

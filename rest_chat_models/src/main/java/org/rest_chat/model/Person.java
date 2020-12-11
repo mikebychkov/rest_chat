@@ -45,11 +45,15 @@ public class Person {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Person person = (Person) o;
-        return Objects.equals(username, person.username) &&
-                Objects.equals(url, person.url);
+        return Objects.equals(username, person.username)
+                && Objects.equals(url, person.url);
     }
 
     @Override
@@ -59,10 +63,10 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", url='" + url + '\'' +
-                '}';
+        return "Person{"
+                + "username='" + username + '\''
+                + ", password='" + password + '\''
+                + ", url='" + url + '\''
+                + '}';
     }
 }

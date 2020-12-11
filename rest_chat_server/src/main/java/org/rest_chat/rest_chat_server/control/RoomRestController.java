@@ -28,7 +28,7 @@ public class RoomRestController {
     @DeleteMapping("/rooms/{roomName}")
     public HttpStatus leaveRoom(@PathVariable String roomName, @RequestBody Person person) {
         Room room = rooms.getRoomByName(roomName);
-        if(room == null) {
+        if (room == null) {
             return HttpStatus.NOT_FOUND;
         }
         rooms.removePersonFromRoom(room, person);

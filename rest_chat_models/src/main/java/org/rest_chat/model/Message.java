@@ -45,12 +45,16 @@ public class Message {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Message message = (Message) o;
-        return Objects.equals(room, message.room) &&
-                Objects.equals(person, message.person) &&
-                Objects.equals(text, message.text);
+        return Objects.equals(room, message.room)
+                && Objects.equals(person, message.person)
+                && Objects.equals(text, message.text);
     }
 
     @Override
@@ -60,10 +64,10 @@ public class Message {
 
     @Override
     public String toString() {
-        return "Message{" +
-                "room=" + room +
-                ", person=" + person +
-                ", text='" + text + '\'' +
-                '}';
+        return "Message{"
+                + "room=" + room
+                + ", person=" + person
+                + ", text='" + text + '\''
+                + '}';
     }
 }

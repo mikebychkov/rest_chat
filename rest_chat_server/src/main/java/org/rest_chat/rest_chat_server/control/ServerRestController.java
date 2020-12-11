@@ -32,8 +32,10 @@ public class ServerRestController {
     }
 
     private void notifyRoom(Message message) {
-        for(Person person : rooms.getRoomPersons(message.getRoom())) {
-            if(person.equals(message.getPerson())) continue;
+        for (Person person : rooms.getRoomPersons(message.getRoom())) {
+            if (person.equals(message.getPerson())) {
+                continue;
+            }
             rest.postForObject(person.getUrl(), message, HttpStatus.class);
         }
     }
