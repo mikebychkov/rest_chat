@@ -16,7 +16,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>13</java.version>
+        <java.version>11</java.version>
     </properties>
 
     <dependencies>
@@ -56,6 +56,13 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <docker>
+                        <host>tcp://127.0.0.1:49155</host>
+                        <tlsVerify>true</tlsVerify>
+                        <certPath>c:\users\admin\.minikube\certs</certPath>
+                    </docker>
+                </configuration>
             </plugin>
         </plugins>
     </build>
